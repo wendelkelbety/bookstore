@@ -22,7 +22,7 @@ class TestCategoryViewSet(APITestCase):
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-        categry_data = json.loads(response.content)[0]
+        categry_data = json.loads(response.content)['results'][0]
         self.assertEqual(categry_data['title'], self.category.title)
 
     def test_create_category(self):
