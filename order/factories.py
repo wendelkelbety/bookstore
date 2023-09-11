@@ -5,9 +5,10 @@ from product.factories import ProductFactory
 
 from order.models import Order
 
+
 class UserFactory(factory.django.DjangoModelFactory):
-    email = factory.Faker('pystr')
-    username = factory.Faker('pystr')
+    email = factory.Faker("pystr")
+    username = factory.Faker("pystr")
 
     class Meta:
         model = User
@@ -20,7 +21,7 @@ class OrderFactory(factory.django.DjangoModelFactory):
     def product(self, create, extracted, **kwargs):
         if not create:
             return
-        
+
         if extracted:
             for product in extracted:
                 self.product.add(product)
