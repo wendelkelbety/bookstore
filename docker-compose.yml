@@ -4,7 +4,7 @@ services:
   db:
     image: postgres:13.0-alpine
     ports:
-      - 5432
+      - 5432:5432
     volumes: 
       - postgres_data:/var/lib/postgresql/data/
     environment:
@@ -12,8 +12,8 @@ services:
       - POSTGRES_PASSWORD=bookstore_dev
       - POSTGRES_DB=bookstore_dev_db
     #docker network
-    networks:
-      - backend
+    #networks:
+    #  - backend
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
@@ -24,14 +24,14 @@ services:
     env_file:
      - ./env.dev
     #docker network
-    networks:
-     - backend
+    #networks:
+    # - backend
     depends_on:
      - db
 #docker network
-networks:
-  backend: 
-    driver: bridge
+#networks:
+#  backend: 
+#    driver: bridge
 volumes:
   postgres_data:
   app_data:

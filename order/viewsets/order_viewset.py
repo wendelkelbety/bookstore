@@ -11,11 +11,11 @@ from order.serializers import OrderSerializer
 
 
 class OrderViewSet(ModelViewSet):
-    authentication_classes = [
-        SessionAuthentication,
-        BasicAuthentication,
-        TokenAuthentication,
-    ]
+    #authentication_classes = [
+    #    SessionAuthentication,
+    #    BasicAuthentication,
+    #    TokenAuthentication,
+    #]
     permission_classes = [IsAuthenticated]
     serializer_class = OrderSerializer
 
