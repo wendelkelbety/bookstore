@@ -28,8 +28,7 @@ SECRET_KEY = "django-insecure-w34qp!e%*+%!6y=&l@f484jk7z+&wz^829kze_zvp*0&ozv4ux
 DEBUG = True
 # DEBUG = int(os.environ.get("DEBUG", default=0))
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'ebac-bookstore-0a022a36d5cf.herokuapp.com']
 
 # Application definition
 
@@ -157,5 +156,3 @@ REST_FRAMEWORK = {
 #SECRET_KEY = os.environ.get("SECRET_KEY")
 
 #DEBUG = int(os.environ.get("DEBUG", default=0))
-
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://ebac-bookstore-0a022a36d5cf.herokuapp.com/']#os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
